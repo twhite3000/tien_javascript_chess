@@ -7,13 +7,13 @@
 #board .column {
     height: 50px;
     width: 50px;
-    background: #EBEEED;
+    background: #86af3f;
     float: left;
     font-size: 45px;
 }
 
 #board .column.dark {
-    background: #A1B0A9;
+    background: #6c903f;
 }
 
 #board .column div {
@@ -72,4 +72,8 @@
 
 #board .column .EMPTY {
     background: none;
+}
+
+#board .column .FREE {
+    background: url('../images/free.png');
 }
