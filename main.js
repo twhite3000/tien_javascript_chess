@@ -199,12 +199,15 @@ function movePieceTo(piece, i, j) { //передвинуть фигуру piece 
 
 function showPathPawn(i, j) { //подсветить путь для пешки
 
-    if (inBounds(i-1, j)) {
-        if (isCellEmpty(i-1, j)) {highlightFree(i-1, j);}
-    }
-    
-    if (inBounds(i-2, j)) {
-        if (isCellEmpty(i-2, j)) {highlightFree(i-2, j);}
+    var row = i-1,
+        column = j;
+
+    while (inBounds(row, column) && row >= i-2) { //подсветим путь вперед
+        if (isCellEmpty(row, column)) {
+            highlightFree(row, column);
+            row--;
+        }
+        else break;
     }
 }
 
@@ -248,8 +251,7 @@ function showPathRook(i, j) { //подсветить путь для ладьи
         else break;
     }    
 }
-
-function showPathKnight (i, j) {
+function showPathKnight (i, j) { //Подсветить ход коня
     if (inBounds(i-2, j-1)) {
         if (isCellEmpty(i-2, j-1)) {highlightFree(i-2, j-1);}
     }
@@ -279,6 +281,7 @@ function showPathKnight (i, j) {
         if (isCellEmpty(i+1, j+2)) {highlightFree(i+1, j+2);}
     }
 }
+
 
 var showPathMap = []; // для удобного доступа к функциям подсветки пути для разных фигур
                      // не нужно подписываться на клик каждого типа фигурки в отдельности -- 
