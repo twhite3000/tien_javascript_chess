@@ -2,6 +2,7 @@
 #board {
     height: 400px;
     width: 400px;
+    position: absolute;
 }
 
 #board .column {
@@ -14,6 +15,10 @@
 
 #board .column.dark {
     background: #6c903f;
+}
+
+#board .column.RED {
+    background: #E71717;
 }
 
 #board .column div {
@@ -76,4 +81,36 @@
 
 #board .column .FREE {
     background: url('../images/free.png');
+}
+
+#board .column .VICTIM {
+    background: url('../images/victim.png');
+}
+
+#startDialog {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ccc;
+    position: absolute;
+    background: #ccc;
+}
+
+#startDialog .inner {
+    margin: 10px;
+}
+
+#startDialog .inner h1 {
+    text-align: center;
+}
+
+#startDialog .inner #peerid {
+    width: 120px
+}
+
+#connectingSign, #creatingRoomSign, #joiningRoomSign, #roomCreatedSign, #connectionLostSign {
+    display: none;
+}
+
+#newRoomId {
+    background: yellow;
 }
